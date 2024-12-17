@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+    color: #eee;
+    min-height: 100vh;
+    /* Ensure the body is at least as tall as the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img{
+    width: 3%;
+    height: auto;
+    margin-left: 3%;
+    margin-top: 4%;
+    position: fixed;
+}
+svg {
+    width: 25px;
+}
+
+header {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin-top: 3%;
+    margin-left: 6%;
+}
+
+header .title{
+    padding: 10px;
+    padding-top: 20px;
+}
+
+header .title,
+header .miracles {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+header .miracles {
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: .8rem;
+    justify-content: right;
+    margin-right: 10%;
+    margin-top: -2.5%;
+
+}
+
+.menu li {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu li:hover {
+    color: #007bff;
+}
+
+.slider {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.slider .list .item {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .list .item::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #131313e7 3%, transparent);
+}
+
+.slider .list .item .content {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+
+.slider .list .item .content p:nth-child(1) {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    /* Reduced letter-spacing */
+}
+
+.slider .list .item .content h2 {
+    font-size: 30px;
+    /* Reduced font size */
+    margin: 0;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2 {
+    animation-delay: 1s;
+}
+
+.slider .list .item.active p:nth-child(3) {
+    animation-duration: 1.3s;
+}
+
+.arrows {
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+
+.arrows button {
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+
+.arrows button:hover {
+    background-color: #eee;
+    color: black;
+}
+
+.thumbnail {
+    left: 45%;
+    position: absolute;
+    bottom: 20px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.thumbnail::-webkit-scrollbar {
+    width: 0;
+}
+
+.thumbnail .item {
+    margin-top: 2.5rem;
+    width: 110px;
+    height: 190px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.thumbnail .item.active {
+    filter: brightness(1.5);
+}
+
+.thumbnail .item .content {
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+
+@media screen and (max-width: 678px) {
+    header {
+        top: 10vh;
+        padding: 10px;
+    }
+
+    .thumbnail {
+        justify-content: start;
+    }
+
+    .slider .list .item .content h2 {
+        font-size: 60px;
+    }
+
+    .arrows {
+        top: 10%;
+    }
+}
+
+#background {
+    padding: 50% 15%;
+    background-color: #222;
+    color: white;
+    border-radius: 8px;
+    margin: 0; /* Remove any margin to ensure full width */
+    height: 80vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the page */
+    display: flex; /* Flexbox to lay out the content */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Vertically center content */
+    text-align: left; /* Align the content to the left */
+}
+
+#background h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Box Styles */
+.box {
+    display: flex; /* Use flexbox for each section */
+    align-items: center; /* Vertically center the content */
+    margin-bottom: 3rem; /* Add space between sections */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure no overflow */
+    background-color: #333; /* Dark background for each box */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    width: 100%; /* Full width of the container */
+    height: auto; /* Adjust height based on content */
+    padding: 12%;
+}
+
+/* Text in the Box */
+.box-text {
+    flex: 1; /* Take up remaining space */
+    padding: 2rem;
+    color: #f0f0f0;
+}
+
+.box-text h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-left: -10%;
+}
+
+.box-text p {
+    font-size: 1.4rem;
+    margin-left: -10%;
+}
+
+/* Image in the Box */
+.box-image {
+    flex: 0 0 35%; /* 35% of space for the image */
+}
+
+.box-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+.box-image img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+
+
+.midpage {
+    display: flex;
+    justify-content: flex-start; /* Align text to the left */
+    align-items: center; /* Center vertically */
+    width: 95%;
+
+    margin-top: 40%;
+    margin-bottom: 0;
+    position: absolute;
+    padding: 4rem 2rem;
+    background-color: #333;
+    background-image: 
+    linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+    url(image/eucharist1.jpg);
+background-size: cover; /* Ensures the image covers the container */
+background-position: right;
+background-repeat: no-repeat;
+
+}
+
+.text {
+    width: 50%;
+    color: #fff;
+    padding-right: 2rem;
+    margin-left: 5%;
+}
+
+.text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    
+}
+
+.button {
+    text-decoration: none;
+    background-color: cornflowerblue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: darkblue;
+}
+
+footer {
+    background-color: #161616;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-size: 12px;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact {
+    color: white;
+    text-align: left;
+    font-size: 12px;
+    margin-top: 2rem;
+}
+
+.contact-container {
+    max-width: 500px;
+    font-size: 12px;
+}#contact form {
+    display: flex;
+    flex-direction: column;  /* Align items in a vertical stack */
+    justify-content: flex-start;  /* Align the form items to the left */
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;  /* Optional: Limits the width of the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #333;
+    margin: 0 auto;  /* Center the form horizontally */
+}
+#contact form label {
+    display: block;
+    font-size: 14px;  /* Slightly larger font for readability */
+    margin-bottom: 1rem;  /* Increased margin for space between label and input */
+    color: white;
+}
+#contact form input,
+#contact form textarea {
+    width: 100%;  /* Make inputs take the full width of the container */
+    padding: 2rem;  /* Adds more space inside the inputs */
+    margin-bottom: 1.5rem;  /* Space between input fields */
+    border: 1px solid #444;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;  /* Larger font for better readability */
+    box-sizing: border-box;  /* Ensures padding is included in width calculation */
+}
+
+#contact form input {
+    height: 45px;  /* Adjust the height for better input visibility */
+    width: auto;
+
+}
+
+#contact form textarea {
+    height: 150px;  /* Adjust height for the Prayer textarea */
+    width: auto;
+    resize: vertical;  /* Allow vertical resizing */
+}
+
+
+#contact form button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 1rem 2.8rem;
+    border-radius: 4rem;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;  /* Add space above the button */
+}
+
+#contact form button:hover {
+    background-color: #c0392b;
+}
+
+
+@media (max-width: 768px) {
+    #contact form {
+        padding: 1rem;  /* Reduce padding for smaller screens */
+    }
+
+    #contact form label,
+    #contact form input,
+    #contact form textarea,
+    #contact form button {
+        font-size: 12px;  /* Adjust font size for smaller screens */
+    }
+}
+
+.c {
+    width: 400px;
+    height: 500px;
+    border-radius: 12px;
+    padding: 20px;
+    padding-bottom: 40px;
+    box-shadow: 0 8px 48px 2px hsla(10 6% 15% / .4);
+  
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  
+    position: relative;
+    overflow: hidden;
+    background: hsl(0 0% 90%);
+  
+    box-sizing: border-box;
+
+    margin-top: 45%;
+    margin-left: 60%;
+    /* z-index: 11; */
+  }
+  
+  .ci {
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    width: inherit;
+    height: inherit;
+    transform-origin: left 50%;
+  
+    background: inherit;
+  
+    z-index: var(--z);
+    transition: .3s ease-out;
+  }
+  .ci img {
+    -moz-user-select: none;  /* For Firefox */
+    user-select: none;       /* For other browsers */
+    
+    width: 100%;             /* Make the image fill the container's width */
+    height: 100%;            /* Make the image fill the container's height */
+    object-fit: cover;       /* Ensure the image covers the container while maintaining its aspect ratio */
+  }
+  
+  
+  .ch {
+    position: absolute;
+    top: 70%;
+    left: 4%;
+    transform: translateY(-50%);
+  
+    font-size: 2rem;
+    color: hsla(var(--h) var(--s) var(--l) / .8);
+    text-shadow: 0 2px 10px hsla(var(--h) var(--s) 10% / .3);
+  }
+  
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -10;
+  }
+  
+  label {
+    width: 10%;
+    height: 10px;
+    margin-right: 4px;
+    border-radius: 20px;
+  
+    background: hsla(0 0% 90% / .3);
+    cursor: pointer;
+  
+    position: relative;
+    z-index: 10;
+  }
+  
+  label:last-child {
+    margin-right: 0;
+  }
+  
+  input:checked+label {
+    background: linear-gradient(to right,
+      hsla(var(--hue) 80% 70% / .7),
+      hsla(calc(var(--hue) + 30) 80% 50% / .7));
+  }
+  
+  input:not(:checked)+label+.ci {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  
+  input:checked+label+.ci~.ci {
+    transform: translateX(100%);
+  }
+  
+  input:not(:checked)+label+.ci {
+    transition: 0;
+  }
+
+  

@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #eee;
+    min-height: 100vh;
+    /* Ensure the body is at least as tall as the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img{
+    width: 3%;
+    height: auto;
+    margin-left: 3%;
+    margin-top: 4%;
+    position: fixed;
+}
+
+svg {
+    width: 25px;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    margin-top: 3%;
+    margin-left: 6%;
+}
+
+header .title{
+    padding: 10px;
+    padding-top: 20px;
+}
+
+header .title,
+header .miracles {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+header .miracles {
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: .8rem;
+    justify-content: right;
+    margin-right: 10%;
+    margin-top: -2.5%;
+
+}
+
+.menu li {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu li:hover {
+    color: #007bff;
+}
+
+
+.content-background {
+    background-image: 
+        linear-gradient(to top, #000 5%, transparent), /* Gradient overlay */
+        url('image/eucharist2.jpg'); /* Background image */
+    background-size: cover; /* Ensure it covers the section */
+    background-position: center; /* Center the image */
+    height: 600px; /* Adjust the height as per your needs */
+    color: white; /* Text color for contrast */
+    padding: 20px; /* Space inside the section */
+    z-index: 2;
+}
+
+
+
+.content {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 700px;
+    max-width: 80%;
+    z-index: 3;
+
+}
+
+.content p{
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    /* Reduced letter-spacing */
+}
+
+.content .explanation{
+    text-transform: none;
+    letter-spacing: 1px;
+    /* Reduced letter-spacing */
+    font-size: 12px;
+}
+
+.content h2 {
+    font-size: 30px;
+    /* Reduced font size */
+    margin: 0;
+}
+
+
+.slider {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin-top: 55%;
+}
+
+.slider .list .item {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 10%, transparent); /* Dark gradient from bottom to top */
+
+}
+
+.slider .list .item::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, #000 10%, transparent);
+}
+
+.slider .list .item .content-liturgy {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+
+.slider .list .item .content-liturgy p:nth-child(1) {
+    text-transform: none;
+    font-size: 13px;
+    /* Reduced letter-spacing */
+}
+
+.slider .list .item .content-liturgy h2 {
+    font-size: 30px;
+    /* Reduced font size */
+    margin: 0;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2 {
+    animation-delay: 1s;
+}
+
+.slider .list .item.active p:nth-child(3) {
+    animation-duration: 1.3s;
+}
+
+.arrows {
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+
+.arrows button {
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+
+.arrows button:hover {
+    background-color: #eee;
+    color: black;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+.social-media {
+    margin-bottom: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+}
+
+.social-icon:hover {
+    color: #007bff;
+}
+
+footer .copyright {
+    font-size: 12px;
+    color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Content Section */
+.midpage {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+    margin-top: 55%;
+    margin-bottom: 0%;
+    position: absolute;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.text {
+    width: 50%;
+    color: white;
+    margin-left: 5rem;
+}
+
+.text p {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.6;
+}
+
+.button {
+    text-decoration: none;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: darkblue;
+}
+
+.image {
+    margin-top: 1%;
+    width: 45%;
+    text-align: center;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Table Styling */
+.quote-table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+}
+
+.quote-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .text,
+    .image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Style for the quote section */
+.quote-section {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0 20px;
+}
+
+.content-liturgy p{
+    text-transform: none;
+    font-size: 13px;
+}
+
+
+.key-aspects {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 10%, transparent 100%), 
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 10%, transparent 100%);
+    padding: 40px;
+    margin-top: 60%;
+    margin-bottom: 5%;
+    color: #fff; /* White text color for contrast */
+    justify-content: left;
+}
+
+.key-aspects .aspects {
+    max-width: 900px;
+}
+
+.key-aspects h2 {
+    text-align: left;
+    font-size: 2.5em;
+    margin-left: 3%
+}
+
+.key-aspects ul {
+    list-style-type: disc; /* Bullets for the list */
+    padding-left: 20px;
+}
+
+.key-aspects li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-left: 10%;
+}
+
+.key-aspects li strong {
+    font-size: 1rem;
+}
+
+

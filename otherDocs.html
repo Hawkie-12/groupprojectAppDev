@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="otherdocs.css">
+    <style>
+        .view-button {
+            display: inline-block;
+            color: white;
+            padding: 10px 10px;
+            font-size: 1rem;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 2px;
+        }
+
+        .view-button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Styling for Search Bar */
+        .search-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .search-container input {
+            padding: 10px;
+            font-size: 1rem;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="logo" style="z-index: 12;"><img src="image/eucharistlogo.png" alt=""></div>
+
+    <header>
+        <div class="header-content">
+            <div class="title">Eucharistic</div>
+            <div class="miracles">Miracles</div>
+            <ul class="menu">
+                <li><a href="index.html" style="text-decoration: none; color: aliceblue;">Home</a></li>
+                <li><a href="how.html" style="text-decoration: none;color: aliceblue;">How</a></li>
+                <li><a href="history.html" style="text-decoration: none;color: aliceblue;">History</a></li>
+                <li><a href="Importance.html" style="text-decoration: none;color: aliceblue;">Importance</a></li>
+                <li><a href="Miracles.html" style="text-decoration: none;color: aliceblue;">Miracles</a></li>
+                <li><a href="otherDocs.html" style="text-decoration: none;color: aliceblue;">Other Documents</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <!-- Search Bar -->
+    <div class="search-container" style="margin-top: 15%;">
+        <input type="text" id="searchInput" placeholder="Search documents..." onkeyup="searchReferences()">
+    </div>
+
+
+    <div class="blog-card" style="margin-top: 10%;" data-name="church teachings eucharistic miracles">
+        <div class="meta">
+            <div class="photo" style="background-image: url(image/Sacrifice.png)">
+            </div>
+            <ul class="details">
+                <ul>
+                    <li><a
+                            href="https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html">Ecclesia
+                            de Eucharistia</a></li>
+                    <li><a href="https://www.usccb.org/sites/default/files/flipbooks/catechism/336/">Catechism of the
+                            Catholic Church</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <h1>Church Teachings</h1>
+            <h2>Eucharistic Miracles</h2>
+            <p> The Eucharist offers spiritual sustenance, believed to be the real presence of Jesus Christ. By
+                partaking in it, believers are spiritually strengthened, deepening their relationship with God and
+                fortifying their faith. It nourishes the soul, providing peace and renewal in times of hardship or
+                spiritual dryness. Regular reception fosters a sense of divine intimacy, helping believers navigate
+                life's challenges with grace and perseverance. Through this sacred act, Christians are reminded of their
+                dependence on God's love and mercy.</p>
+            <p class="read-more">
+                <a href="#">Read More</a>
+            </p>
+        </div>
+    </div>
+    <div class="blog-card alt" data-name="scripture references eucharistic miracles">
+        <div class="meta">
+            <div class="photo" style="background-image: url(image/Community.jpg)">
+            </div>
+            <ul class="details">
+     
+                <li class="tags">
+                    <ul>
+                        <li><a href="https://bible.knowing-jesus.com/topics/The-Eucharist">14 Bible Verses about The
+                                Eucharist</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <h1>Scripture References</h1>
+            <h2>Eucharistic Miracles</h2>
+            <p> The Eucharist commemorates the Las Supper and Jesus’ ultimate sacrifice on the cross. This act of
+                remembrance connects believers to the profound mystery of salvation and God’s love. It serves as a
+                bridge between the past and present, making Christ's sacrifice perpetually relevant. By reflecting on
+                this sacred mystery, believers gain a deeper appreciation for Christ's redemptive love. The Eucharist
+                invites Christians to live lives of gratitude and humility in response to this incredible gift.</p>
+            <p class="read-more">
+                <a href="#">Read More</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="blog-card" data-name="historical documents council of trent eucharist">
+        <div class="meta">
+            <div class="photo" style="background-image: url(image/Grace.jpeg)">
+            </div>
+            <ul class="details">
+
+                <li class="tags">
+                    <ul>
+                        <li><a href="https://www.ewtn.com/catholicism/library/eucharist-in-the-council-of-trent-3090">Council
+                                of Trent</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <h1>Historical Documents</h1>
+            <h2>Eucharistic Miracles</h2>
+            <p> Receiving the Eucharist brings grace and spiritual renewal, helping believers overcome sin and live a
+                life of holiness. It serves as a means to grow in virtue and remain close to God. The grace received
+                empowers individuals to resist temptation and to persevere in their faith journeys. It strengthens the
+                soul, providing the courage needed to face trials with hope and resilience. The Eucharist continually
+                refreshes and sanctifies, enabling believers to align their lives with God's will.</p>
+            <p class="read-more">
+                <a href="#">Read More</a>
+            </p>
+        </div>
+    </div>
+    <div class="blog-card alt" data-name="theological writings council of trent eucharist">
+        <div class="meta">
+            <div class="photo" style="background-image: url(image/Mission.jpg)">
+            </div>
+            <ul class="details">
+     
+                <li class="tags">
+                    <ul>
+                        <li><a href="https://www.eucharisticrevival.org/post/st-thomas-aquinas-on-the-eucharist"> St.
+                                Thomas Aquinas on the Eucharist - Eucharistic Revival</a></li>
+                        <li><a href="https://stpaulcenter.com/st-augustines-theology-of-the-eucharist/"> St. Augustine’s
+                                Theology of the Eucharist - St. Paul Center</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <h1>Theological Writings</h1>
+            <h2>Eucharistic Miracles</h2>
+            <p> The Eucharist inspires believers to live out their faith in daily life. It motivates acts of love,
+                service, and justice, reflecting Christ’s teachings in their actions and interactions. This sacrament
+                serves as a reminder of Christ’s call to be His hands and feet in the world. Through the Eucharist,
+                Christians are empowered to work for peace and reconciliation in their communities. It encourages a
+                spirit of generosity and selflessness, inspiring believers to make a positive difference in the lives of
+                others.</p>
+            <p class="read-more">
+                <a href="#">Read More</a>
+            </p>
+
+
+
+        </div>
+    </div>
+
+    <div class="blog-card alt" data-name="modern resources council of trent eucharist">
+        <div class="meta">
+            <div class="photo" style="background-image: url(image/Mission.jpg)">
+            </div>
+            <ul class="details">
+     
+                <li class="tags">
+                    <ul>
+                        <li><a
+                                href="https://www.researchgate.net/publication/335987909_A_Historical_Catechetical_Canonical_and_Ecumenical_Case_for_the_Elevation_of_Consecrated_Elements_in_Anglican_Eucharistic_Worship">
+                                A Historical, Catechetical, Canonical, and Ecumenical Case for the Elevation of
+                                Consecrated
+                                Elements in Anglican Eucharistic Worship</a></li>
+                        <li><a
+                                href="https://www.researchgate.net/publication/354957464_A_Review_of_the_Catholic_Theology_on_the_Eucharistic_Transubstantiation_and_the_Real_Presence_Doctrines_-_Why_They_Matter">
+                                A Review of the Catholic Theology on the Eucharistic Transubstantiation and the Real
+                                Presence Doctrines – Why They Matter</a></li>
+                        <li><a
+                                href="https://www.researchgate.net/publication/352509880_EUCHARIST_in_the_life_and_mission_of_the_Church">
+                                EUCHARIST in the life and mission of the Church</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="description">
+            <h1>Modern Resources</h1>
+            <h2>Eucharistic Miracles</h2>
+            <p> The Eucharist inspires believers to live out their faith in daily life. It motivates acts of love,
+                service, and justice, reflecting Christ’s teachings in their actions and interactions. This sacrament
+                serves as a reminder of Christ’s call to be His hands and feet in the world. Through the Eucharist,
+                Christians are empowered to work for peace and reconciliation in their communities. It encourages a
+                spirit of generosity and selflessness, inspiring believers to make a positive difference in the lives of
+                others.</p>
+            <p class="read-more">
+                <a href="#">Read More</a>
+            </p>
+
+
+
+        </div>
+    </div>
+
+    <script>
+        function searchReferences() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            blogCards.forEach(card => {
+                const dataName = card.getAttribute('data-name').toLowerCase();
+                if (dataName.includes(searchQuery)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+
+<style>
+
+</style>
+
+</html>
